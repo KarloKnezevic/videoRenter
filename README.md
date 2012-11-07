@@ -1,4 +1,4 @@
-advanced-java-videorenter
+videoRenter
 =========================
 
 Student project for the Advanced Java course @ FER
