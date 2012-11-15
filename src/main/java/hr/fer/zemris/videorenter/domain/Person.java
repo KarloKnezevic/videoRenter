@@ -11,6 +11,10 @@ public class Person {
 	protected String address;
 	protected String email;
 	
+	public long getId() {
+		return id;
+	}
+
 	public String getName() {
 		return name;
 	}
