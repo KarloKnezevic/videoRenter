@@ -1,12 +1,15 @@
 package hr.fer.zemris.videorenter.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Movie {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected long id;
 	protected long imdbId;
 	protected String name; 

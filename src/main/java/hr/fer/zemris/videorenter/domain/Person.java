@@ -1,16 +1,28 @@
 package hr.fer.zemris.videorenter.domain;
 
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public class Person {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected long id;
 	protected String name;
 	protected String surname;
 	protected String address;
 	protected String email;
+	protected String password;
 	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	public long getId() {
 		return id;
 	}

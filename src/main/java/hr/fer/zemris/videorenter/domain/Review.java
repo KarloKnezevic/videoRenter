@@ -1,19 +1,39 @@
 package hr.fer.zemris.videorenter.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.*;
 
 @Entity
 public class Review {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected long id;
-	protected long movieId;
-	protected long memberId;
+	@ManyToOne
+	protected Movie movie;
+	@ManyToOne
+	protected Member member;
 	protected String title;
 	protected String content;
+	@Size(min = 1, max = 5)
 	protected int rating;
-
+	
+	public Movie getMovie() {
+		return movie;
+	}
+	
+	public void setMovie(Movie movie) {
+		this.movie = movie;
+	}
+	
+	public Member getMember() {
+		return member;
+	}
+	
+	public void setMember(Member member) {
+		this.member = member;
+	}
+	
 	public String getTitle() {
 		return title;
 	}
@@ -37,4 +57,9 @@ public class Review {
 	public void setRating(int rating) {
 		this.rating = rating;
 	}
+	
+	public long getId() {
+		return id;
+	}
+	
 }
