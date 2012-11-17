@@ -1,12 +1,15 @@
 package hr.fer.zemris.videorenter.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 @Entity
-public class Rental {
+public class Rental implements Serializable {
+	
+	private static final long serialVersionUID = 90690554606943706L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected long id;
 	@ManyToOne
 	protected Movie movie;

@@ -1,6 +1,6 @@
 package hr.fer.zemris.videorenter.domain;
 
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -8,11 +8,13 @@ import javax.persistence.OneToMany;
 @Entity
 public class Member extends Person {
 
+	private static final long serialVersionUID = 3118032358547530152L;
+	
 	protected String memeberShipDate;
 	@OneToMany
-	protected List<Review> review;
+	protected Set<Review> reviews;
 	@OneToMany
-	protected List<Rental> rentals;
+	protected Set<Rental> rentals;
 	
 	public String getMemeberShipDate() {
 		return memeberShipDate;
@@ -22,19 +24,19 @@ public class Member extends Person {
 		this.memeberShipDate = memeberShipDate;
 	}
 	
-	public List<Review> getReview() {
-		return review;
+	public Set<Review> getReviews() {
+		return reviews;
 	}
 	
-	public void setReview(List<Review> review) {
-		this.review = review;
+	public void setReviews(Set<Review> reviews) {
+		this.reviews = reviews;
 	}
 	
-	public List<Rental> getRentals() {
+	public Set<Rental> getRentals() {
 		return rentals;
 	}
 	
-	public void setRentals(List<Rental> rentals) {
+	public void setRentals(Set<Rental> rentals) {
 		this.rentals = rentals;
 	}
 	

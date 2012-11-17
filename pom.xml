@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>hr.fer.zemris.pjptokupo</groupId>
+  <groupId>hr.fer.zemris.videorenter</groupId>
   <artifactId>videoRenter</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
@@ -16,14 +16,7 @@
   </properties>
 	
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-    
-    <dependency>
+	<dependency>
 		<groupId>org.springframework</groupId>
 		<artifactId>spring-core</artifactId>
 		<version>${spring-version}</version>
@@ -43,7 +36,7 @@
 		<artifactId>spring-aop</artifactId>
 		<version>${spring-version}</version>
 	</dependency>
-		<dependency>
+	<dependency>
 		<groupId>org.springframework</groupId>
 		<artifactId>spring-orm</artifactId>
 		<version>${spring-version}</version>
@@ -54,19 +47,25 @@
 		<version>${spring-version}</version>
 		<scope>test</scope>
 	</dependency>
+
+
+
 	<!-- Spring data project -->
+
 	<dependency>
 		<groupId>org.springframework.data</groupId>
 		<artifactId>spring-data-jpa</artifactId>
 		<version>1.1.0.RELEASE</version>
 	</dependency>
+
 	<dependency>
 		<groupId>aspectj</groupId>
 		<artifactId>aspectjweaver</artifactId>
 		<version>1.5.4</version>
 	</dependency>
-    
-    <!-- HIBERNATE -->
+
+
+	<!-- HIBERNATE -->
 	<dependency>
 		<groupId>org.hibernate.javax.persistence</groupId>
 		<artifactId>hibernate-jpa-2.0-api</artifactId>
@@ -84,6 +83,20 @@
 		<version>4.3.0.Final</version>
 	</dependency>
 	
+
+	<!-- Logging -->
+	<dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+		<version>1.2.17</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-log4j12</artifactId>
+		<version>1.6.6</version>
+	</dependency>
+
 	<!-- HSQL -->
 	<dependency>
 		<groupId>org.hsqldb</groupId>
@@ -91,29 +104,34 @@
 		<version>2.2.8</version>
 		<scope>runtime</scope>
 	</dependency>
-	
+
 	<!-- POSTGRESQL -->
 	<dependency>
 		<groupId>postgresql</groupId>
 		<artifactId>postgresql</artifactId>
 		<version>9.1-901-1.jdbc4</version>
 	</dependency>
-	
-	<!-- logging -->
+
 	<dependency>
-		<groupId>log4j</groupId>
-		<artifactId>log4j</artifactId>
-		<version>1.2.17</version>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>4.10</version>
+		<scope>test</scope>
 	</dependency>
-	
-	<dependency>
-		<groupId>org.slf4j</groupId>
-		<artifactId>slf4j-log4j12</artifactId>
-		<version>1.6.6</version>
-	</dependency>
-		
   </dependencies>
+  
   <build>
+      <plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>2.5.1</version>
+			<configuration>
+				<source>${java-version}</source>
+				<target>${java-version}</target>
+			</configuration>
+		</plugin>
+	</plugins>
     <finalName>videoRenter</finalName>
   </build>
 </project>

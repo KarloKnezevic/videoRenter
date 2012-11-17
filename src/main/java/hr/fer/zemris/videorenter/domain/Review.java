@@ -1,13 +1,16 @@
 package hr.fer.zemris.videorenter.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
 @Entity
-public class Review {
+public class Review implements Serializable {
+	
+	private static final long serialVersionUID = 4031411218396681500L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected long id;
 	@ManyToOne
 	protected Movie movie;

@@ -1,13 +1,16 @@
 package hr.fer.zemris.videorenter.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 @Entity
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
-public class Person {
+public class Person implements Serializable {
+	
+	private static final long serialVersionUID = -3350663772440220516L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected long id;
 	protected String name;
 	protected String surname;

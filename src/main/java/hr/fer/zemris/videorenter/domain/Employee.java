@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 @Entity
 public class Employee extends Person {
 	
+	private static final long serialVersionUID = -2395036721222742745L;
+	
 	protected boolean admin;
 	protected int salary;
 	protected String employmentDate;
@@ -32,4 +34,5 @@ public class Employee extends Person {
 	public void setEmploymentDate(String employmentDate) {
 		this.employmentDate = employmentDate;
 	}
+	
 }

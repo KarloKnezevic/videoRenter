@@ -1,2 +1,6 @@
 target/
 *~
+videorenter.tmp/
+videorenter.properties
+videorenter.script
+videorenter.log

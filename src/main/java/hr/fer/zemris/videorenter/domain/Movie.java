@@ -1,15 +1,16 @@
 package hr.fer.zemris.videorenter.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Movie {
+public class Movie implements Serializable {
+	
+	private static final long serialVersionUID = 8777937546596905465L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected long id;
 	protected long imdbId;
 	protected String name; 
@@ -21,6 +22,10 @@ public class Movie {
 		return imdbId;
 	}
 	
+	public long getId() {
+		return id;
+	}
+
 	public void setImdbId(long imdbId) {
 		this.imdbId = imdbId;
 	}

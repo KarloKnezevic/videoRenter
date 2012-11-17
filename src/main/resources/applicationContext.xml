@@ -20,10 +20,7 @@
     <!-- Include context files from different layers -->
     <!-- ******************************************************************** -->
 
-    <import resource="datasource-test.xml"/>
-    <import resource="repositories.xml"/>
     
-    <tx:annotation-driven/>
     
-	<context:component-scan base-package="hr.calyx.education.vjestina.dao"></context:component-scan>
+
 </beans>
