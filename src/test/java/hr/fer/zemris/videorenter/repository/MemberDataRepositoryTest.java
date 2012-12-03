@@ -1,5 +1,6 @@
 package hr.fer.zemris.videorenter.repository;
 
+import hr.fer.zemris.videorenter.domain.Member;
 import junit.framework.TestCase;
 
 import org.junit.Test;
@@ -20,7 +21,13 @@ public class MemberDataRepositoryTest extends TestCase {
 	@Test
 	public void testMemberRepository() {
 		
-		repository.findAll();
+		Member member = new Member();
+		member.setName("Ivo");
+		member.setSurname("Majic");
+		member.setAddress("Belinin odvojak 1A");
+		
+		repository.save(member);
+		assertEquals(1, repository.count());
 		
 	}
 	
