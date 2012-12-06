@@ -20,7 +20,8 @@
     <!-- Include context files from different layers -->
     <!-- ******************************************************************** -->
 
-    
-    
+    <import resource="classpath:datasource.xml"/>
+    <import resource="classpath:repositories.xml"/>
+    <import resource="classpath:services.xml"/>
 
 </beans>
